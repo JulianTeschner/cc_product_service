@@ -12,7 +12,7 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     defaults:
       run:
-        working-directory: ./backend
+        working-directory: ./productService
     steps:
       - name: checkout repo
         uses: actions/checkout@v3
@@ -28,7 +28,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: ./backend
-          file: ./backend/Dockerfile
+          context: ./productService
+          file: ./productService/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/casino:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/product_service:latest
