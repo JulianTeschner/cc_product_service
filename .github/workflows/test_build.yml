@@ -1,0 +1,20 @@
+name: test_and_build
+on:
+  push:
+    branches: ['**']
+  pull_request:
+    branches: [main]
+
+jobs:
+  test_and_build:
+    uses: JulianTeschner/go_test_build_action/.github/workflows/test_build.yml@main
+    with:
+      COVERAGE_PERCANTAGE: 75
+      WORKING_DIR: ./productService
+      GO_VERSION: 1.17.x
+      OS_VERSION: ubuntu-latest
+      IMAGE_NAME: product_service
+
+    secrets:
+      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
