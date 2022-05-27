@@ -14,7 +14,6 @@ jobs:
       GO_VERSION: 1.17.x
       OS_VERSION: ubuntu-latest
       IMAGE_NAME: product_service
-
     secrets:
       DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
       DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
