@@ -19,11 +19,8 @@ func New() *gin.Engine {
 
 	// Wrap the http handler with gin adapter
 	productGroup := r.Group("/product")
-	// productGroup.Use(adapter.Wrap(middleware.EnsureValidToken()))
-	// {
 	productGroup.GET("/:name", product.GetProductHandler)
 	productGroup.POST("", product.PostProductHandler)
 	productGroup.DELETE("/:name", product.DeleteProductHandler)
-	// }
 	return r
 }
