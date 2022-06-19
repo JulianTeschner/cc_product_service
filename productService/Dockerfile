@@ -1,14 +1,14 @@
 FROM golang:1.17 as builder
 
 # Set the Current Working Directory inside the container
-WORKDIR $GOPATH/src/github.com/JulianTeschner/CasinoIP2
+WORKDIR $GOPATH/src/github.com/JulianTeschner/cc_product_service
 
 # Copy everything from the current directory to the PWD (Present Working Directory) inside the container
 COPY . . 
 
 # Install the package
 
-WORKDIR $GOPATH/src/github.com/JulianTeschner/CasinoIP2/cmd
+WORKDIR $GOPATH/src/github.com/JulianTeschner/cc_product_service/cmd
 
 RUN CGO_ENABLED=0 go build -v  .
 
@@ -26,7 +26,7 @@ WORKDIR /backend
 
 WORKDIR /backend/bin
 
-COPY --from=builder go/src/github.com/JulianTeschner/CasinoIP2/cmd ./
+COPY --from=builder go/src/github.com/JulianTeschner/cc_product_service/cmd ./
 
 # This container exposes port 8080 to the outside world
 EXPOSE 8080
