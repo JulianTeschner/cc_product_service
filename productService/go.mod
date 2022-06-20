@@ -1,4 +1,4 @@
-module github.com/JulianTeschner/cloudcomputing/service/productService
+module github.com/JulianTeschner/cc_product_service
 
 go 1.17
 

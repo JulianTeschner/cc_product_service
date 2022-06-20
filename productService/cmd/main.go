@@ -6,8 +6,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/JulianTeschner/cloudcomputing/service/productService/product"
-	"github.com/JulianTeschner/cloudcomputing/service/productService/router"
+	"github.com/JulianTeschner/cc_product_service/product"
+	"github.com/JulianTeschner/cc_product_service/router"
 	"github.com/joho/godotenv"
 )
 
